@@ -26,6 +26,9 @@ export class ErrMessage {
  */
 export type Bindings = {
     WEBHOOK_KEY: string
+    SLACK_CHANNEL: string
+    SLACK_TOKEN: string
+    TG_TOKEN: string
 }
 
 const algorithm = {
@@ -41,20 +44,6 @@ const importAlgo = {
 }
 
 export function hash_func(data:string){
-    /*
-    const myText = new TextEncoder().encode(data);
-
-    const myDigest = await crypto.subtle.digest(
-    {
-        name: 'SHA-256',
-    },
-        myText
-    );
-    const hexString = [...new Uint8Array(myDigest)]
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('')
-    return hexString
-    */
     return Md5.hashStr(data)
 }
 
